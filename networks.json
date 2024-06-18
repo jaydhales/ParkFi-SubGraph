@@ -1,0 +1,8 @@
+{
+  "sepolia": {
+    "WeParkMembershipNFT": {
+      "address": "0x0d2e002D36d80f0A991431708150D4cB7A0bb3ad",
+      "startBlock": 6134016
+    }
+  }
+}
