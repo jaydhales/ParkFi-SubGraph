@@ -3,6 +3,15 @@
     "WeParkMembershipNFT": {
       "address": "0x0d2e002D36d80f0A991431708150D4cB7A0bb3ad",
       "startBlock": 6134016
+    },
+    "ParkSpaceNFT": {
+      "address": "0x3d2b7532042340285084f92db4626aF28Ae42af3"
+    },
+    "ParkToken": {
+      "address": "0xE66e3132632df70273501C4254831eb755A88CDb"
+    },
+    "ParkFi": {
+      "address": "0x5414F2deDEE10747f179e572D0f768450d4f7Ce9"
     }
   }
 }
