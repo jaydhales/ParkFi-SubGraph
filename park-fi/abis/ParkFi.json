@@ -144,7 +144,7 @@
     "outputs": [
       {
         "components": [
-          { "internalType": "uint256", "name": "id", "type": "uint256" },
+          { "internalType": "uint256", "name": "psId", "type": "uint256" },
           {
             "internalType": "uint256",
             "name": "hourlyPrice",
@@ -187,7 +187,7 @@
     "outputs": [
       {
         "components": [
-          { "internalType": "uint256", "name": "id", "type": "uint256" },
+          { "internalType": "uint256", "name": "psId", "type": "uint256" },
           {
             "internalType": "uint256",
             "name": "hourlyPrice",
