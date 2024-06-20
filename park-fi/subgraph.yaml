@@ -1,0 +1,38 @@
+specVersion: 1.0.0
+indexerHints:
+  prune: auto
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: ParkFi
+    network: sepolia
+    source:
+      address: "0x1f6EEC72dcA1ccd968aba326492EAAB09bF8C14c"
+      abi: ParkFi
+      startBlock: 6145961
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - CheckIn
+        - CheckedOut
+        - NewMemberAdded
+        - OwnershipTransferred
+        - ParkSpaceMinted
+      abis:
+        - name: ParkFi
+          file: ./abis/ParkFi.json
+      eventHandlers:
+        - event: CheckIn(indexed uint256,indexed address)
+          handler: handleCheckIn
+        - event: CheckedOut(indexed uint256)
+          handler: handleCheckedOut
+        - event: NewMemberAdded(indexed address)
+          handler: handleNewMemberAdded
+        - event: OwnershipTransferred(indexed address,indexed address)
+          handler: handleOwnershipTransferred
+        - event: ParkSpaceMinted(indexed uint256,indexed uint256,indexed uint256)
+          handler: handleParkSpaceMinted
+      file: ./src/park-fi.ts
