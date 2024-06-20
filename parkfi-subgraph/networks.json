@@ -1,8 +1,8 @@
 {
   "sepolia": {
-    "MembershipNft": {
-      "address": "0x8bB960138cb32F9e40fD68Bac5eAd8F7d1eeDEB5",
-      "startBlock": 6140936
+    "ParkFi": {
+      "address": "0x1f6EEC72dcA1ccd968aba326492EAAB09bF8C14c",
+      "startBlock": 6145961
     }
   }
 }
