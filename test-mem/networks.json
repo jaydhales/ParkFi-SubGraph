@@ -1,0 +1,8 @@
+{
+  "sepolia": {
+    "MembershipNft": {
+      "address": "0xe37e44964Dad319C6b31D222453b7DDd3b249721",
+      "startBlock": 6145960
+    }
+  }
+}
