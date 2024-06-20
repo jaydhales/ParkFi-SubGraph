@@ -17,7 +17,7 @@ export function handleCheckIn(event: CheckInEvent): void {
   let entity = new CheckIn(
     event.transaction.hash.concatI32(event.logIndex.toI32())
   )
-  entity.id_ = event.params.id_
+  entity.pfid_ = event.params.pfid_
   entity.member_ = event.params.member_
 
   entity.blockNumber = event.block.number
@@ -31,7 +31,7 @@ export function handleCheckedOut(event: CheckedOutEvent): void {
   let entity = new CheckedOut(
     event.transaction.hash.concatI32(event.logIndex.toI32())
   )
-  entity.id_ = event.params.id_
+  entity.pfid_ = event.params.pfid_
 
   entity.blockNumber = event.block.number
   entity.blockTimestamp = event.block.timestamp

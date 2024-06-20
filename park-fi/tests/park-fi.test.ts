@@ -17,11 +17,11 @@ import { createCheckInEvent } from "./park-fi-utils"
 
 describe("Describe entity assertions", () => {
   beforeAll(() => {
-    let id_ = BigInt.fromI32(234)
+    let pfid_ = BigInt.fromI32(234)
     let member_ = Address.fromString(
       "0x0000000000000000000000000000000000000001"
     )
-    let newCheckInEvent = createCheckInEvent(id_, member_)
+    let newCheckInEvent = createCheckInEvent(pfid_, member_)
     handleCheckIn(newCheckInEvent)
   })
 
@@ -39,7 +39,7 @@ describe("Describe entity assertions", () => {
     assert.fieldEquals(
       "CheckIn",
       "0xa16081f360e3847006db660bae1c6d1b2e17ec2a-1",
-      "id_",
+      "pfid_",
       "234"
     )
     assert.fieldEquals(

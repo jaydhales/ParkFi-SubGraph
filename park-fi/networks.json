@@ -1,8 +1,8 @@
 {
   "sepolia": {
     "ParkFi": {
-      "address": "0x76807bd717cfab825aba49546a61beb0477e7607",
-      "startBlock": 6146940
+      "address": "0xefce5726631051a4ea3a8483d79e69f8fe0aa12a",
+      "startBlock": 6147018
     }
   }
 }

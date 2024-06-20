@@ -8,13 +8,13 @@ import {
   ParkSpaceMinted
 } from "../generated/ParkFi/ParkFi"
 
-export function createCheckInEvent(id_: BigInt, member_: Address): CheckIn {
+export function createCheckInEvent(pfid_: BigInt, member_: Address): CheckIn {
   let checkInEvent = changetype<CheckIn>(newMockEvent())
 
   checkInEvent.parameters = new Array()
 
   checkInEvent.parameters.push(
-    new ethereum.EventParam("id_", ethereum.Value.fromUnsignedBigInt(id_))
+    new ethereum.EventParam("pfid_", ethereum.Value.fromUnsignedBigInt(pfid_))
   )
   checkInEvent.parameters.push(
     new ethereum.EventParam("member_", ethereum.Value.fromAddress(member_))
@@ -23,13 +23,13 @@ export function createCheckInEvent(id_: BigInt, member_: Address): CheckIn {
   return checkInEvent
 }
 
-export function createCheckedOutEvent(id_: BigInt): CheckedOut {
+export function createCheckedOutEvent(pfid_: BigInt): CheckedOut {
   let checkedOutEvent = changetype<CheckedOut>(newMockEvent())
 
   checkedOutEvent.parameters = new Array()
 
   checkedOutEvent.parameters.push(
-    new ethereum.EventParam("id_", ethereum.Value.fromUnsignedBigInt(id_))
+    new ethereum.EventParam("pfid_", ethereum.Value.fromUnsignedBigInt(pfid_))
   )
 
   return checkedOutEvent

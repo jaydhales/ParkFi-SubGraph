@@ -1,6 +1,6 @@
 type CheckIn @entity(immutable: true) {
   id: Bytes!
-  id_: BigInt! # uint256
+  pfid_: BigInt! # uint256
   member_: Bytes! # address
   blockNumber: BigInt!
   blockTimestamp: BigInt!
@@ -9,7 +9,7 @@ type CheckIn @entity(immutable: true) {
 
 type CheckedOut @entity(immutable: true) {
   id: Bytes!
-  id_: BigInt! # uint256
+  pfid_: BigInt! # uint256
   blockNumber: BigInt!
   blockTimestamp: BigInt!
   transactionHash: Bytes!

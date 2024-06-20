@@ -8,9 +8,9 @@ dataSources:
     name: ParkFi
     network: sepolia
     source:
-      address: "0x76807bd717cfab825aba49546a61beb0477e7607"
+      address: "0xefce5726631051a4ea3a8483d79e69f8fe0aa12a"
       abi: ParkFi
-      startBlock: 6146940
+      startBlock: 6147018
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.7

@@ -33,7 +33,7 @@
       {
         "indexed": true,
         "internalType": "uint256",
-        "name": "id_",
+        "name": "pfid_",
         "type": "uint256"
       },
       {
@@ -52,7 +52,7 @@
       {
         "indexed": true,
         "internalType": "uint256",
-        "name": "id_",
+        "name": "pfid_",
         "type": "uint256"
       }
     ],
@@ -118,7 +118,7 @@
   },
   {
     "inputs": [
-      { "internalType": "uint256", "name": "_id", "type": "uint256" },
+      { "internalType": "uint256", "name": "_pfId", "type": "uint256" },
       {
         "internalType": "enum ParkFi.DurationType",
         "name": "_durationType",
@@ -132,7 +132,9 @@
     "type": "function"
   },
   {
-    "inputs": [{ "internalType": "uint256", "name": "_id", "type": "uint256" }],
+    "inputs": [
+      { "internalType": "uint256", "name": "_pfId", "type": "uint256" }
+    ],
     "name": "checkOut",
     "outputs": [],
     "stateMutability": "nonpayable",
