@@ -27,6 +27,15 @@ type BatchMetadataUpdate @entity(immutable: true) {
   transactionHash: Bytes!
 }
 
+type MembershipMinted @entity(immutable: true) {
+  id: Bytes!
+  _to: Bytes! # address
+  _tId: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
 type MetadataUpdate @entity(immutable: true) {
   id: Bytes!
   _tokenId: BigInt! # uint256
@@ -49,6 +58,14 @@ type Transfer @entity(immutable: true) {
   from: Bytes! # address
   to: Bytes! # address
   tokenId: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type terminated @entity(immutable: true) {
+  id: Bytes!
+  _tId: BigInt! # uint256
   blockNumber: BigInt!
   blockTimestamp: BigInt!
   transactionHash: Bytes!

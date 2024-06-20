@@ -4,10 +4,12 @@ import {
   Approval,
   ApprovalForAll,
   BatchMetadataUpdate,
+  MembershipMinted,
   MetadataUpdate,
   OwnershipTransferred,
-  Transfer
-} from "../generated/WeParkMembershipNFT/WeParkMembershipNFT"
+  Transfer,
+  terminated
+} from "../generated/MembershipNft/MembershipNft"
 
 export function createApprovalEvent(
   owner: Address,
@@ -80,6 +82,24 @@ export function createBatchMetadataUpdateEvent(
   return batchMetadataUpdateEvent
 }
 
+export function createMembershipMintedEvent(
+  _to: Address,
+  _tId: BigInt
+): MembershipMinted {
+  let membershipMintedEvent = changetype<MembershipMinted>(newMockEvent())
+
+  membershipMintedEvent.parameters = new Array()
+
+  membershipMintedEvent.parameters.push(
+    new ethereum.EventParam("_to", ethereum.Value.fromAddress(_to))
+  )
+  membershipMintedEvent.parameters.push(
+    new ethereum.EventParam("_tId", ethereum.Value.fromUnsignedBigInt(_tId))
+  )
+
+  return membershipMintedEvent
+}
+
 export function createMetadataUpdateEvent(_tokenId: BigInt): MetadataUpdate {
   let metadataUpdateEvent = changetype<MetadataUpdate>(newMockEvent())
 
@@ -141,4 +161,16 @@ export function createTransferEvent(
   )
 
   return transferEvent
+}
+
+export function createterminatedEvent(_tId: BigInt): terminated {
+  let terminatedEvent = changetype<terminated>(newMockEvent())
+
+  terminatedEvent.parameters = new Array()
+
+  terminatedEvent.parameters.push(
+    new ethereum.EventParam("_tId", ethereum.Value.fromUnsignedBigInt(_tId))
+  )
+
+  return terminatedEvent
 }

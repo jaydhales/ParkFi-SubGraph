@@ -5,12 +5,12 @@ schema:
   file: ./schema.graphql
 dataSources:
   - kind: ethereum
-    name: WeParkMembershipNFT
+    name: MembershipNft
     network: sepolia
     source:
-      address: "0x0d2e002D36d80f0A991431708150D4cB7A0bb3ad"
-      abi: WeParkMembershipNFT
-      startBlock: 6134016
+      address: "0x8bB960138cb32F9e40fD68Bac5eAd8F7d1eeDEB5"
+      abi: MembershipNft
+      startBlock: 6140936
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.7
@@ -19,12 +19,14 @@ dataSources:
         - Approval
         - ApprovalForAll
         - BatchMetadataUpdate
+        - MembershipMinted
         - MetadataUpdate
         - OwnershipTransferred
         - Transfer
+        - terminated
       abis:
-        - name: WeParkMembershipNFT
-          file: ./abis/WeParkMembershipNFT.json
+        - name: MembershipNft
+          file: ./abis/MembershipNft.json
       eventHandlers:
         - event: Approval(indexed address,indexed address,indexed uint256)
           handler: handleApproval
@@ -32,10 +34,14 @@ dataSources:
           handler: handleApprovalForAll
         - event: BatchMetadataUpdate(uint256,uint256)
           handler: handleBatchMetadataUpdate
+        - event: MembershipMinted(indexed address,indexed uint256)
+          handler: handleMembershipMinted
         - event: MetadataUpdate(uint256)
           handler: handleMetadataUpdate
         - event: OwnershipTransferred(indexed address,indexed address)
           handler: handleOwnershipTransferred
         - event: Transfer(indexed address,indexed address,indexed uint256)
           handler: handleTransfer
-      file: ./src/we-park-membership-nft.ts
+        - event: terminated(indexed uint256)
+          handler: handleterminated
+      file: ./src/membership-nft.ts
