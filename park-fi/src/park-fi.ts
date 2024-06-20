@@ -3,19 +3,19 @@ import {
   CheckedOut as CheckedOutEvent,
   NewMemberAdded as NewMemberAddedEvent,
   OwnershipTransferred as OwnershipTransferredEvent,
-  ParkSpaceMinted as ParkSpaceMintedEvent
+  ParkSpaceMinted as ParkSpaceMintedEvent,
 } from "../generated/ParkFi/ParkFi"
 import {
   CheckIn,
   CheckedOut,
   NewMemberAdded,
   OwnershipTransferred,
-  ParkSpaceMinted
+  ParkSpaceMinted,
 } from "../generated/schema"
 
 export function handleCheckIn(event: CheckInEvent): void {
   let entity = new CheckIn(
-    event.transaction.hash.concatI32(event.logIndex.toI32())
+    event.transaction.hash.concatI32(event.logIndex.toI32()),
   )
   entity.pfid_ = event.params.pfid_
   entity.member_ = event.params.member_
@@ -29,7 +29,7 @@ export function handleCheckIn(event: CheckInEvent): void {
 
 export function handleCheckedOut(event: CheckedOutEvent): void {
   let entity = new CheckedOut(
-    event.transaction.hash.concatI32(event.logIndex.toI32())
+    event.transaction.hash.concatI32(event.logIndex.toI32()),
   )
   entity.pfid_ = event.params.pfid_
 
@@ -42,7 +42,7 @@ export function handleCheckedOut(event: CheckedOutEvent): void {
 
 export function handleNewMemberAdded(event: NewMemberAddedEvent): void {
   let entity = new NewMemberAdded(
-    event.transaction.hash.concatI32(event.logIndex.toI32())
+    event.transaction.hash.concatI32(event.logIndex.toI32()),
   )
   entity._newMember = event.params._newMember
 
@@ -54,10 +54,10 @@ export function handleNewMemberAdded(event: NewMemberAddedEvent): void {
 }
 
 export function handleOwnershipTransferred(
-  event: OwnershipTransferredEvent
+  event: OwnershipTransferredEvent,
 ): void {
   let entity = new OwnershipTransferred(
-    event.transaction.hash.concatI32(event.logIndex.toI32())
+    event.transaction.hash.concatI32(event.logIndex.toI32()),
   )
   entity.previousOwner = event.params.previousOwner
   entity.newOwner = event.params.newOwner
@@ -71,7 +71,7 @@ export function handleOwnershipTransferred(
 
 export function handleParkSpaceMinted(event: ParkSpaceMintedEvent): void {
   let entity = new ParkSpaceMinted(
-    event.transaction.hash.concatI32(event.logIndex.toI32())
+    event.transaction.hash.concatI32(event.logIndex.toI32()),
   )
   entity._tokenid = event.params._tokenid
   entity._hPrice = event.params._hPrice

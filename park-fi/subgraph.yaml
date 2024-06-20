@@ -8,7 +8,7 @@ dataSources:
     name: ParkFi
     network: sepolia
     source:
-      address: "0xefce5726631051a4ea3a8483d79e69f8fe0aa12a"
+      address: "0x5f5e7Ec4B245c571EdFa8fcd81A09b9311B769b1"
       abi: ParkFi
       startBlock: 6147018
     mapping:
